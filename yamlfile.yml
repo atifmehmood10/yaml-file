@@ -1,0 +1,18 @@
+---
+description: Whitelist configuration for the GLOBAL
+schema_name: url-whitelisting
+schema_url: https://confluence.huit.harvard.edu/display/HUITINFRA/URL+Whitelisting
+schema_version: 1.1.0
+fqdns:
+- url: 'https://www.google.com'
+  type: http-request
+  result: http:200
+- url: 'https://errorea'
+  type: Error
+  result: http:500
+- url: 'https://www.yahoo.com'
+  type: http-request
+  result: http:200
+- url: 'https://somethingerror'
+  type: tcp:636
+  result: http:500
